@@ -1,45 +1,68 @@
 # **Behavioral Cloning** 
 
-**Behavioral Cloning Project**
+## Project Goals
 
-The goals / steps of this project are the following:
-* Use the simulator to collect data of car driving for a few laps 
-* Build a convolution neural network that predicts steering angles based off images taken in simulator
+The goals of this project are the following:
+* Use the simulator to collect data of car driving around the track. Steering is done manually using a mouse.
+* Build a convolution neural network that predicts steering angles based off images taken in simulator and user steering inputs.
 * Train and validate the model with a training and validation set
-* Test that the model successfully drives around track one without leaving the road in autonomous mode 
+* Ensure that the model successfully drives around track without leaving the road in autonomous mode 
+
 ---
 
 
-### Model Architecture and Training Strategy
+## Model Architecture 
 
-#### 1. An appropriate model architecture has been employed
 
 The convolution neural network that used was derived from a paper written by the team over at Nvidia. For more details of the architecture, please refer to:
 
 [Nvidia Paper](https://arxiv.org/pdf/1704.07911.pdf)
 
-#### 2. Attempts to reduce overfitting in the model
+A few dropout layers was included into the architecture to reduce overfitting.The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-A few dropout layers was included into the architecture to reduce overfitting.
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-
-#### 3. Model parameter tuning
-
-No tuning was necessary as an Adam optimizer was used which dynamically adjust the learning rate.
+Please view `visualisation.ipynb` file for a detailed summary of the model architecture and sample pictures taken by all of the cameras.
 
 
-### Model Architecture and Training Strategy
+## Training Strategy
 
-The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based Nvidia as the Nvidia team has proven that architecture is valid for self driving cars on real roads.
+The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based Nvidia as the Nvidia team has proven that architecture performs well even for self driving cars on real roads.
 
-The number epochs was initially set to 10 to figure out at what epoch will the training and validation loss converge/plateau. The loss of the validation loss was initially too high compared to the training. This indicates overfitting. A few dropout layers was added to 
+The number epochs was initially set to 10 to figure out at what epoch will the training and validation loss plateau. The loss of the validation loss was initially too high compared to the training. This indicates overfitting. A few dropout layers was added to 
 combat overfitting.
 
-During testing when the car is set on autonomous mode (automatically goes around the track), the car does not make very sharp turns which made it fail at one part of the track which a high steering angle was required. This was solved by adding camera images from the left and right angles. Images was also flipped which doubled the amount of training images.
+During initial testing when the car is set on autonomous mode (automatically goes around the track), the car does not make very sharp turns which made it fail at some parts of the track where a high steering angle was required. This was solved by adding camera images from the left and right angles. An offset correction steering angle was added/subtracted for the left and right camera images.
 
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+Training images was also flipped which doubled the amount of training images and also provides better generalization of data.
 
-Note: Training images used for training are from Udacity. I will extract my own training data for the harder track with more sharp turns and harder manuever in the future.
+At the end of the process, the vehicle was able to drive autonomously around the track without leaving the road. Please download `video.mp4` to see the end result.
+
+
+# How to get started?
+---
+
+1. Take the necessary files to drive the car and process images into a video stream.
+
+```
+git clone https://github.com/udacity/CarND-Behavioral-Cloning-P3
+bash set_git.sh
+
+```
+
+2. Download the Simulator: [**Here**](https://github.com/udacity/self-driving-car-sim)
+
+3. Simulator has two modes, training and autonomous. First, go to training mode to collect data. Press the record button and drive the car around the track yourself.
+
+4. Images and a csv file will be added into your workspace. From the csv file (`driving_log.csv`), it has the path of all of the images and the corresponding steering angles.
+
+5. Head over to my `model.py` to see how I extract the data using information from the `driving_log.csv`. 
+
+6. The fun starts! Train your model and see how it performs on the track (Autonomous Mode)
+
+**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can try out is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py)
+
+
+# Advice
+---
+
 
 
