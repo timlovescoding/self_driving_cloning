@@ -58,7 +58,6 @@ bash set_git.sh
 
 6. The fun starts! Train your model and see how it performs on the track (Autonomous Mode)
 
-**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can try out is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py). 
 
 
 ## Advice
@@ -71,6 +70,8 @@ bash set_git.sh
 3. Crop out unnecessary portion of the image (Example: the sky).
 
 4. Flip the training images (double the dataset) and  move around the track one more time in the opposite direction for better generalization of training data.
+
+**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out from is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py). 
 
 
 
