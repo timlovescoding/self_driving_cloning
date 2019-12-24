@@ -57,7 +57,7 @@ Training images was also flipped which doubled the amount of training images and
 
 ## End Result & Discussion
 
-The vehicle was able to drive autonomously around the track without leaving the road. The vehicle keeps at the very center pretty well through the track. Please head over [***Here***](https://www.youtube.com/watch?v=_fW9ALWORSU) to view the full video.
+The vehicle was able to drive autonomously around the track without leaving the road. The vehicle keeps at the very center pretty well through the track. Please head over [**Here**](https://www.youtube.com/watch?v=_fW9ALWORSU) to view the full video.
 
 This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by its own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need of any hand-crafted rules! 
 
