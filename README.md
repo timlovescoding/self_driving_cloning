@@ -59,10 +59,9 @@ Training images was also flipped which doubled the amount of training images and
 
 The vehicle was able to drive autonomously around the track without leaving the road. The vehicle keeps at the very center pretty well through the track. Please download `video.mp4` to see the end result.
 
-This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by it own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need of any hand-crafted rules! 
+This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by its own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need of any hand-crafted rules! 
 
 ## Advice
----
 
 1. Use an online GPU. With roughly 500k+ parameters, training on your local CPU will take hours and may even heat up your computer. I recommend transferring all of your data into your Google Drive and using Colaboratory to untar+unzip the data, view `visualization.ipynb` to see how I did it.
 
