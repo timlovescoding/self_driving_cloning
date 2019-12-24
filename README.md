@@ -71,7 +71,7 @@ bash set_git.sh
 
 4. Flip the training images (double the dataset) and  move around the track one more time in the opposite direction for better generalization of training data.
 
-**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out from is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py). 
+**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out from at [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py) by Comma.ai
 
 
 
