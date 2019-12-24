@@ -37,10 +37,10 @@ Training images was also flipped which doubled the amount of training images and
 At the end of the process, the vehicle was able to drive autonomously around the track without leaving the road. Please download `video.mp4` to see the end result.
 
 
-# How to get started?
+## How to get started?
 ---
 
-1. Take the necessary files to drive the car and process images into a video stream.
+1. Take the necessary files to drive the car and process images into a video stream:
 
 ```
 git clone https://github.com/udacity/CarND-Behavioral-Cloning-P3
@@ -58,11 +58,19 @@ bash set_git.sh
 
 6. The fun starts! Train your model and see how it performs on the track (Autonomous Mode)
 
-**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can try out is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py)
+**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can try out is from comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py). 
 
 
-# Advice
+## Advice
 ---
+
+1. Use an online GPU. With roughly 500k+ parameters, training on your local CPU will take hours and may even heat up your computer. I recommend transferring all of your data into your Google Drive and using Colaboratory to untar+unzip the data, view `visualization.ipynb` to see how I did it.
+
+2. Use a generator. With usage of generator, you won't need to load all of the image arrays in the beginning before you start training. This saves your time especially when you are doing the project over a period of few days as you will not need to re-load the data everytime.  Besides, this is a great practice as you save a lot of memory space using a generator.
+
+3. Crop out unnecessary portion of the image (Example: the sky).
+
+4. Flip the training images (double the dataset) and  move around the track one more time in the opposite direction for better generalization of training data.
 
 
 
