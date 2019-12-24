@@ -10,33 +10,6 @@ The goals of this project are the following:
 
 ---
 
-
-## Model Architecture 
-
-
-The convolution neural network that used was derived from a paper written by the team over at Nvidia. For more details of the architecture, please refer to:
-
-[Nvidia Paper](https://arxiv.org/pdf/1704.07911.pdf)
-
-A few dropout layers was included into the architecture to reduce overfitting.The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-
-Please view `visualisation.ipynb` file for a detailed summary of the model architecture and sample pictures taken by all of the cameras.
-
-
-## Training Strategy
-
-The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based Nvidia as the Nvidia team has proven that architecture performs well even for self driving cars on real roads.
-
-The number epochs was initially set to 10 to figure out at what epoch will the training and validation loss plateau. The loss of the validation loss was initially too high compared to the training. This indicates overfitting. A few dropout layers was added to 
-combat overfitting.
-
-During initial testing when the car is set on autonomous mode (automatically goes around the track), the car does not make very sharp turns which made it fail at some parts of the track where a high steering angle was required. This was solved by adding camera images from the left and right angles. An offset correction steering angle was added/subtracted for the left and right camera images.
-
-Training images was also flipped which doubled the amount of training images and also provides better generalization of data.
-
-At the end of the process, the vehicle was able to drive autonomously around the track without leaving the road. Please download `video.mp4` to see the end result.
-
-
 ## How to get started?
 ---
 
@@ -59,6 +32,34 @@ bash set_git.sh
 6. The fun starts! Train your model and see how it performs on the track (Autonomous Mode)
 
 
+## Model Architecture 
+
+
+The convolution neural network (CNN) that I decided to use was derived from a paper written by the team over at Nvidia. For more details of the architecture, please refer to:
+
+[Nvidia Paper](https://arxiv.org/pdf/1704.07911.pdf)
+
+A few dropout layers was included into the architecture to reduce overfitting.The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
+Please view `visualisation.ipynb` file for a detailed summary of the model architecture and sample pictures taken by all of the cameras.
+
+
+## Training Strategy
+
+The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based Nvidia as the Nvidia team has proven that architecture performs well even for self driving cars on real roads.
+
+The number epochs was initially set to 10 to figure out at what epoch will the training and validation loss plateau. The loss of the validation loss was initially too high compared to the training. This indicates overfitting. A few dropout layers was added to 
+combat overfitting.
+
+During initial testing when the car is set on autonomous mode (automatically goes around the track), the car does not make very sharp turns which made it fail at some parts of the track where a high steering angle was required. This was solved by adding camera images from the left and right angles. An offset correction steering angle was added/subtracted for the left and right camera images.
+
+Training images was also flipped which doubled the amount of training images and also provides better generalization of data.
+
+## End Result & Discussion
+
+The vehicle was able to drive autonomously around the track without leaving the road. The vehicle keeps at the very center pretty well through the track. Please download `video.mp4` to see the end result.
+
+This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by it own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need of any hand-crafted rules! 
 
 ## Advice
 ---
@@ -71,7 +72,7 @@ bash set_git.sh
 
 4. Flip the training images (double the dataset) and  move around the track one more time in the opposite direction for better generalization of training data.
 
-**ALL THE BEST!** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out from at [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py) by Comma.ai
+***ALL THE BEST!*** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out was done by comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py).
 
 
 
