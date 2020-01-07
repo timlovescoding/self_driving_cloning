@@ -39,14 +39,14 @@ The convolution neural network (CNN) that I decided to use was derived from a pa
 
 [Nvidia Paper](https://arxiv.org/pdf/1704.07911.pdf)
 
-A few dropout layers was included into the architecture to reduce overfitting.The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+A few dropout layers was included into the architecture to reduce overfitting.The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle can stay on the track.
 
 Please view `visualisation.ipynb` file for a detailed summary of the model architecture and sample pictures taken by all of the cameras.
 
 
 ## Training Strategy
 
-The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based Nvidia as the Nvidia team has proven that architecture performs well even for self driving cars on real roads.
+The strategy to tackle this problem was to first split the datasets for training and validation. Next, we have to extract out the inputs and outputs into a format that can be fed into the Convolutional Neural Network. The model architecture was based off Nvidia as the Nvidia team has proven that architecture performs well even for self driving cars on real roads.
 
 The number epochs was initially set to 10 to figure out at what epoch will the training and validation loss plateau. The loss of the validation loss was initially too high compared to the training. This indicates overfitting. A few dropout layers was added to 
 combat overfitting.
@@ -59,13 +59,13 @@ Training images was also flipped which doubled the amount of training images and
 
 The vehicle was able to drive autonomously around the track without leaving the road. The vehicle keeps at the very center pretty well through the track. Please head over [**Here**](https://www.youtube.com/watch?v=_fW9ALWORSU) to view the full video.
 
-This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by its own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need of any hand-crafted rules! 
+This demonstrates that the CNN has been trained to learn to detect useful features of the surroundings by its own with only **steering angles** as a training signal! This is such an amazing project to do as it shows that we do not need to explicitly train or manually code the car to detect specific useful features such as the outlines of the roads. This saves us the hassle of coming out with the algorithms for lane detection, path planning and control. The CNN was able to learn the entire task of keeping itself on the road between the road lines without the need for any hand-crafted rules! 
 
 ## Advice
 
 1. Use an online GPU. With roughly 500k+ parameters, training on your local CPU will take hours and may even heat up your computer. I recommend transferring all of your data into your Google Drive and using Colaboratory to untar+unzip the data, view `visualization.ipynb` to see how I did it.
 
-2. Use a generator. With usage of generator, you won't need to load all of the image arrays in the beginning before you start training. This saves your time especially when you are doing the project over a period of few days as you will not need to re-load the data everytime.  Besides, this is a great practice as you save a lot of memory space using a generator.
+2. Use a generator. With usage of generator, you will not need to load all of the image arrays in the beginning before you start training. This saves your time especially when you are doing the project over a period of few days as you will not need to re-load the data everytime.  Besides, this is a great practice as you save a lot of memory space using a generator.
 
 3. Crop out unnecessary portion of the image (Example: the sky).
 
