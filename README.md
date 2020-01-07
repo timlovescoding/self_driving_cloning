@@ -71,7 +71,7 @@ This demonstrates that the CNN has been trained to learn to detect useful featur
 
 4. Flip the training images (double the dataset) and  move around the track one more time in the opposite direction for better generalization of training data.
 
-***ALL THE BEST!*** There are tons of resources online in relation to behavioral cloning! Another architecture you can learn and try out was done by comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py).
+***ALL THE BEST!*** There are tons of resources online in relation to behavioral cloning! Example of another architecture you can learn from by comma.ai over [**HERE**](https://github.com/commaai/research/blob/master/train_steering_model.py).
 
 
 
