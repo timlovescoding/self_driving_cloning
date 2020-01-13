@@ -8,7 +8,10 @@ The goals of this project are the following:
 * Train and validate the model with a training and validation set
 * Ensure that the model successfully drives around track without leaving the road in autonomous mode 
 
-[![gif_demo1][cloning.gif]](https://www.youtube.com/watch?v=_fW9ALWORSU&t=17s)
+
+![gif_demo1](cloning.gif)
+
+Full Video Link: [**HERE**](https://www.youtube.com/watch?v=_fW9ALWORSU&t=17s)
 
 ---
 
